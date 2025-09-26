@@ -255,7 +255,9 @@ const TaskioApp = () => {
         )}
       </div>
 
-      <CreateTask addTask={addTask} setNewTask={setNewTask} />
+      {!isLoading && (<CreateTask addTask={addTask} setNewTask={setNewTask}/>)}
+
+      
     </div>
   )
 }

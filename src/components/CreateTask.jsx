@@ -1,43 +1,49 @@
-import { Modal, Button } from "react-bootstrap";
-import { useState } from "react";
+import { Modal, Button } from "react-bootstrap"
+import { useState } from "react"
 
-function CreateTask({addTask, setNewTask}) {
-  const [show, setShow] = useState(false);
+function CreateTask({ addTask, setNewTask }) {
+  const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const today = new Date();
-  today.setHours(0, 0, 0, 0); // reset time
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+  const [title, setTitle] = useState("")
+  const [content, setContent] = useState("")
+  const today = new Date()
+  today.setHours(0, 0, 0, 0) 
   const todayStr = today.toLocaleDateString("en-CA")
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
     const taskData = {
-        title: formData.get("title"),
-        deadline: new Date(formData.get("endDate")).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric"
-        }),
-        content: formData.get("content"),
+      title: formData.get("title"),
+      deadline: new Date(formData.get("endDate")).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+      content: formData.get("content"),
     }
-
 
     if (!taskData) return
     addTask(taskData)
-    setNewTask('')
-    setTitle('')
-    setContent('')
+    setNewTask("")
+    setTitle("")
+    setContent("")
     e.target.reset()
     handleClose()
-    }
+  }
 
   return (
     <>
-      <a href="#" className="add-task" onClick={(e) => {e.preventDefault(); handleShow();}}>
+      <a
+        href="#"
+        className="add-task"
+        onClick={(e) => {
+          e.preventDefault()
+          handleShow()
+        }}
+      >
         Add Task
       </a>
 
@@ -60,13 +66,19 @@ function CreateTask({addTask, setNewTask}) {
                 maxLength={10}
                 required
               />
-               <small className="mx-2">characters: {title.length}/10</small>
+              <small className="mx-2">characters: {title.length}/10</small>
             </div>
 
             <div className="row">
               <div className="col">
                 <label className="form-label">End Date</label>
-                <input name="endDate"  type="date" className="form-control" min={todayStr} required />
+                <input
+                  name="endDate"
+                  type="date"
+                  className="form-control"
+                  min={todayStr}
+                  required
+                />
               </div>
             </div>
 
@@ -76,13 +88,13 @@ function CreateTask({addTask, setNewTask}) {
                 name="content"
                 className="form-control"
                 rows="3"
-                placeholder="Enter task description"  
+                placeholder="Enter task description"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 maxLength={40}
                 required
               />
-                <small className="mx-2">characters: {content.length}/40</small>
+              <small className="mx-2">characters: {content.length}/40</small>
             </div>
           </Modal.Body>
 

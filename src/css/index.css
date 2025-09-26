@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-  position: relative; /* so ::before attaches correctly */
+  position: relative; 
   background: url('./../assets/background.webp') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
@@ -14,13 +14,12 @@ body {
 
 body::before {
   content: "";
-  position: fixed; /* instead of absolute → covers viewport always */
+  position: fixed; 
   inset: 0; 
   background-color: rgba(255, 255, 255, 0.6); 
   z-index: -1; 
 }
 
-/* Navbar */
 .navbar {
   background: #fff;
   border-radius: 30px;
@@ -36,7 +35,6 @@ body::before {
   margin-right: 8px;
 }
 
-/* Hero Section */
 .hero {
   text-align: center;
 }

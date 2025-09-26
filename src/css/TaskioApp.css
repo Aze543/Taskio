@@ -1,0 +1,94 @@
+
+
+/* Navbar */
+.taskio-navbar {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 15px 30px;
+}
+.taskio-logo {
+  width: 100px;
+  margin-right: 50px;
+}
+.nav-links .nav-link {
+  color: black;
+  font-weight: 600;
+}
+.nav-links .nav-link.active {
+  border-bottom: 2px solid black;
+}
+
+/* Search */
+.search {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 6px 15px;
+  display: flex;
+  align-items: center;
+}
+.search input {
+  outline: none;
+  box-shadow: none !important;
+}
+
+/* Menu icon */
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Task Card */
+.task-card {
+  background: #f7e8ff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tag.ongoing { background: #ff6cc9; color: white; }
+.tag.not-started { background: gold;}
+.tag.done { background: #5ef7ad; color: white; }
+.tag.deadline { background: red; color: white; }
+.task-card h3 { margin: 5px 0; }
+.task-card p { margin: 3px 0; }
+.date { font-size: 12px; color: #333; margin-top: 8px; }
+
+/* Add Task button */
+.add-task {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #dca0ff;
+  color: black;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-start {
+  background: #dca0ff;
+  color: black;
+  padding: 5px 15px;
+}
+
+.btn-start:hover {
+  background: #dcabf9;
+  color: black;
+  padding: 5px 15px;
+}
+
+.btn-start:active {
+  transform: scale(0.9);
+  color: black;
+  padding: 5px 15px;
+}
